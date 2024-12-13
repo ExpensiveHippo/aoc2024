@@ -23,6 +23,7 @@ func findOccurences(word string)(count int) {
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
 	var lines []string
@@ -182,7 +183,7 @@ func findOccurences2()(count int) {
 	if err != nil {
 		panic(err)
 	}
-
+	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	var lines []string
 
